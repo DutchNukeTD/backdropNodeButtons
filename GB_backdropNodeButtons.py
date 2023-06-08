@@ -1,5 +1,5 @@
 # Golan van der Bend 
-# 2022-12-19
+# 2023-06-07
 # Add buttons to BackdropNode
 # Recreated the backdrop gizmo from 'Franklin Toussaint'. 
 
@@ -72,9 +72,10 @@ else:
     
     ## create variables ##
     ## Label
-    try: 
-        backdorpLabel = backdrop['label']
-        backdrop.addKnob(backdorpLabel)
+    try:
+        link_label = nuke.Link_Knob('link_label', 'label')
+        link_label.setLink('label')
+        backdrop.addKnob(link_label)
     except:
         print('Label button already exist.')
         pass
